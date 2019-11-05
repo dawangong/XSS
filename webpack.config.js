@@ -2,6 +2,9 @@ const path = require("path");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const webpack = require("webpack");
+const NODE_ENV = process.env.NODE_ENV;
+
+console.log(NODE_ENV, 11);
 
 module.exports = {
     entry: {
@@ -9,7 +12,7 @@ module.exports = {
     },
     output: {
         filename: "[name].[hash].min.js",
-        path: path.join(__dirname, "dist")
+        path: path.resolve(__dirname, "dist")
     },
     module: {
         rules: [
@@ -51,12 +54,20 @@ module.exports = {
         ]
     },
     plugins: [
+        // new webpack.DefinePlugin({
+        //   'process.env': JSON.stringify()
+        // }),
         new HtmlWebpackPlugin({
             template: './src/index.html',
         }),
         new webpack.HotModuleReplacementPlugin(),
         new CleanWebpackPlugin(['dist'])
     ],
+    resolve: {
+      alias: {
+        '@': path.resolve('src')
+      }
+    },
     devServer: {
         inline:true,
         hot:true,
@@ -65,6 +76,5 @@ module.exports = {
         host: 'localhost',
         port: 9000,
         compress: true
-    },
-    mode: process.env
+    }
 };

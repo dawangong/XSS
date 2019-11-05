@@ -5,8 +5,9 @@
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server --mode development",
-    "build": "webpack --mode prod",
+    "dev": "webpack-dev-server --mode development --progress --color",
+    "prod": "webpack-dev-server --mode production --progress --color",
+    "build": "webpack --mode production --progress --color",
     "babel": "babel src --out-dir dist"
   },
   "repository": {
