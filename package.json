@@ -5,9 +5,9 @@
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack-dev-server --mode development --progress --color --config build/webpack.dev.js",
-    "prod": "webpack-dev-server --mode production --progress --color --config build/webpack.prod.js",
-    "build": "webpack --mode production --progress --color --config build/webpack.prod.js",
+    "dev": "webpack-dev-server --mode=development --progress --color --config build/webpack.dev.js",
+    "prod": "webpack-dev-server --mode=production --progress --color --config build/webpack.prod.js",
+    "build": "webpack --mode=production --progress --color --config build/webpack.prod.js",
     "babel": "babel src --out-dir dist"
   },
   "repository": {
@@ -21,21 +21,6 @@
     "url": "https://github.com/dawangong/XSS/issues"
   },
   "homepage": "https://github.com/dawangong/XSS#readme",
-  "babel": {
-    "presets": [
-      "env",
-      "stage-2"
-    ],
-    "plugins": [
-      [
-        "transform-runtime",
-        {
-          "polyfill": true,
-          "regenerator": true
-        }
-      ]
-    ]
-  },
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",
@@ -55,7 +40,7 @@
     "style-loader": "^0.23.1",
     "url-loader": "^1.1.2",
     "webpack": "^4.29.3",
-    "webpack-cli": "^3.2.3",
-    "webpack-dev-server": "^3.1.14"
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.9.0"
   }
 }

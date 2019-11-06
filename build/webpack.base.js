@@ -2,9 +2,6 @@ const path = require("path");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const webpack = require("webpack");
-const NODE_ENV = process.env.NODE_ENV;
-
-console.log(NODE_ENV, 'NODE_ENV');
 
 const baseConfig = {
   entry: {
@@ -24,7 +21,6 @@ const baseConfig = {
       {
         test: /\.js$/,
         include: /src/,
-        exclude: /build/,
         use: [
           {
             loader: 'babel-loader',
