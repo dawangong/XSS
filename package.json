@@ -5,9 +5,9 @@
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack-dev-server --mode development --progress --color",
-    "prod": "webpack-dev-server --mode production --progress --color",
-    "build": "webpack --mode production --progress --color",
+    "dev": "webpack-dev-server --mode development --progress --color --config build/webpack.dev.js",
+    "prod": "webpack-dev-server --mode production --progress --color --config build/webpack.prod.js",
+    "build": "webpack --mode production --progress --color --config build/webpack.prod.js",
     "babel": "babel src --out-dir dist"
   },
   "repository": {
@@ -44,8 +44,9 @@
     "babel-preset-stage-2": "^6.24.1",
     "clean-webpack-plugin": "^1.0.1",
     "css-loader": "^2.1.0",
-    "eslint": "^5.15.1",
+    "eslint": "^5.16.0",
     "eslint-config-google": "^0.12.0",
+    "eslint-loader": "^3.0.2",
     "eslint-plugin-vue": "^5.2.2",
     "file-loader": "^3.0.1",
     "html-webpack-plugin": "^3.2.0",

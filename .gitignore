@@ -1,0 +1,11 @@
+.git
+*.log
+node_modules/
+dist/
+package-lock.json
+.idea/
+
+# Editor directories and files
+.idea
+package.json
+.eslintrc.js
